@@ -1,0 +1,89 @@
+{
+  "employee": [
+    {
+      "id": 8,
+      "name": "Szabó Piroska",
+      "email": "piroska@axelero.hu"
+    },
+    {
+      "id": 7,
+      "name": "Kovács Krisztina",
+      "email": "krisztina75@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Kovács Géza",
+      "email": "kowi@axelero.hu"
+    },
+    {
+      "id": 5,
+      "name": "Nagy Piroska",
+      "email": "piri@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Kis Miramell",
+      "email": "miri@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Lajos-Kovács Krisztina",
+      "email": "kovacskrisztinamonika@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Lajos Lóránt"
+    },
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    },
+    {
+      "id": 9
+    }
+  ],
+  "posts": [],
+  "users": [
+    {
+      "id": 10,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 9,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 8,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 7,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 6,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 5,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 4,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 3,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 2,
+      "name": "Paco Rabanne"
+    },
+    {
+      "id": 11,
+      "name": "Paco Rabanne"
+    }
+  ]
+}

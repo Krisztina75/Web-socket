@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing json-sokcet-server</title>
+</head>
+
+<body>
+    <h1>Socket test</h1>
+
+    <button id="get">
+        Get
+    </button>
+    <button id="post">
+        Post
+    </button>
+    <button id="put">
+        Put
+    </button>
+    <button id="delete">
+        Delete
+    </button>
+
+    <pre id="output">
+
+    </pre>
+
+    <script>
+        const socketUrl = "ws://localhost:8080";
+        let exampleSocket = new WebSocket(socketUrl);
+        const output = document.querySelector('#output');
+        document.querySelector("#get").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({
+                type: 'read',
+                path: 'users'
+            }));
+        });
+        document.querySelector("#post").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({
+                type: 'create',
+                path: 'users',
+                data: {
+                    name: 'Paco Rabanne'
+                }
+            }));
+        });
+        document.querySelector("#put").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({
+                type: 'update',
+                path: 'users',
+                id: 5,
+                data: {
+                    id: 5,
+                    name: 'Josh',
+                    age: 20
+                }
+            }));
+        });
+        document.querySelector("#delete").addEventListener('click', () => {
+            exampleSocket.send(JSON.stringify({
+                type: 'delete',
+                path: 'users',
+                id: 9
+            }));
+        });
+        let retryConnectionCount = 0;
+        exampleSocket.onopen = (ev) => {
+            console.log('Socket opened: ', ev);
+            retryConnectionCount = 25;
+        }
+        exampleSocket.onmessage = (m) => {
+            let message = JSON.parse(m.data);
+            output.innerHTML = JSON.stringify(message, null, 4);
+            console.log('Message: ', message);
+        };
+        exampleSocket.onclose = (ev) => {
+            console.log('Socket closed: ', ev);
+        }
+    </script>
+</body>
+
+</html>
